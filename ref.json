@@ -1,0 +1,145 @@
+{
+	"item": [{
+			"name": "User Registration",
+			"request": {
+				"method": "POST",
+				"header": [{
+					"key": "Accept",
+					"value": "application/json",
+					"type": "default"
+				}],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"sonam@example.com\",\r\n    \"name\":\"Sonam\",\r\n    \"password\":\"123456\",\r\n    \"password2\":\"123456\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/register/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "user", "register", ""]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login User",
+			"request": {
+				"method": "POST",
+				"header": [{
+					"key": "Accept",
+					"value": "application/json",
+					"type": "default"
+				}],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"sonam@example.com\",\r\n    \"password\":\"hello123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/login/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "user", "login", ""]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Profile",
+			"request": {
+				"method": "GET",
+				"header": [{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <token>",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/profile/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "user", "profile", ""]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change User Password",
+			"request": {
+				"method": "POST",
+				"header": [{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <token>",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"password\":\"hello\",\r\n    \"password2\":\"hello\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/changepassword/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "user", "changepassword", ""]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer <token>",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/user/logout/",
+					"protocol": "http",
+					"host": ["127", "0", "0", "1"],
+					"port": "8000",
+					"path": ["api", "user", "logout", ""]
+				}
+			},
+			"response": []
+		}
+
+	]
+}

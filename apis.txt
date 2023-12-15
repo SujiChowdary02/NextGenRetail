@@ -1,0 +1,113 @@
+Authentication Endpoints:
+User Registration
+
+URL: <server_url>/register/
+Method: POST
+Headers:
+Content-Type: application/json
+Body (raw - JSON):
+json
+Copy code
+{
+    "email": "user@example.com",
+    "name": "Your Name",
+    "password": "your_password",
+    "password2": "your_password",
+    "tc": true
+}
+User Login
+
+URL: <server_url>/login/
+Method: POST
+Headers:
+Content-Type: application/json
+Body (raw - JSON):
+json
+Copy code
+{
+    "email": "user@example.com",
+    "password": "your_password"
+}
+Change Password
+
+URL: <server_url>/changepassword/
+Method: POST
+Headers:
+Content-Type: application/json
+Authorization: Bearer <token>
+Body (raw - JSON):
+json
+Copy code
+{
+    "password": "new_password",
+    "password2": "new_password"
+}
+Logout (Simulated)
+
+URL: <server_url>/logout/
+Method: POST
+Headers:
+Content-Type: application/json
+Body: No body required
+User Profile
+
+URL: <server_url>/profile/
+Method: GET
+Headers:
+Content-Type: application/json
+Authorization: Bearer <token>
+Body: No body required
+
+
+Dataset Management Endpoints:
+
+Upload Dataset
+URL: <server_url>/api/datasets/upload/
+Method: POST
+Headers:
+Content-Type: multipart/form-data
+Authorization: Bearer <token>
+Body (form-data):
+key: file, value: Your dataset file
+
+Fetch User's Datasets
+URL: <server_url>/api/datasets/user_datasets/
+Method: GET
+Headers:
+Content-Type: application/json
+Authorization: Bearer <token>
+Body: No body required
+
+Download Dataset
+URL: <server_url>/api/datasets/download/<int:pk>/
+Method: GET
+Headers:
+Content-Type: application/json
+Authorization: Bearer <token>
+Body: No body required
+
+Delete Dataset
+URL: <server_url>/api/datasets/delete/<int:pk>/
+Method: DELETE
+Headers:
+Content-Type: application/json
+Authorization: Bearer <token>
+Body: No body required
+
+Search Datasets
+URL: <server_url>/api/datasets/search/<str:dataset_name>/
+Method: GET
+Headers:
+Content-Type: application/json
+Authorization: Bearer <token>
+Body: No body required
+
+View Dataset Details
+URL: <server_url>/api/datasets/detail/<int:pk>/
+Method: GET
+Headers:
+Content-Type: application/json
+Authorization: Bearer <token>
+Body: No body required
+
+Ensure to replace <server_url>, <token>, <dataset_id>, and other placeholders with your actual server details and data. This structure in Postman should help you test these endpoints effectively. Adjust the headers and body content based on your API specifications.
